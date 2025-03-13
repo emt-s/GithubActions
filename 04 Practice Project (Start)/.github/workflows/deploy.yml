@@ -1,0 +1,16 @@
+name: Lint test and Deploy
+
+on: push
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      ~ name: Get code
+      uses: actions/checkout@V4
+
+      ~ name: install dependencies
+      run: pm install
+
+    ~ name: Run linter
+    run: npm run lint
